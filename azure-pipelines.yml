@@ -16,12 +16,16 @@ steps:
 
 - task: Xcode@5
   inputs:
-    actions: 'clean build'
-    configuration: 'Release'
-    sdk: 'iphoneos'
+    actions: 'build-for-testing'
     xcWorkspacePath: '*.xcworkspace'
     scheme: 'sampleapp-ios-swift'
     xcodeVersion: 'specifyPath'
     xcodeDeveloperDir: '/Applications/Xcode_11.3.app'
     packageApp: false
     publishJUnitResults: true
+- task: AppCenterTest@1
+  inputs:
+    artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
+    frameworkOption: 'xcuitest'
+    credentialsOption: 'serviceEndpoint'
+    localeOption: 'en_US'

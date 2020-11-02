@@ -28,7 +28,7 @@ steps:
 
 - task: AppCenterTest@1
   inputs:
-    appFile: 'build/derivedData/Build/Products/Debug-iphoneos/sampleapp-ios-swift.app'
+    appFile: 'AppCenterTest/sampleapp-ios-swiftUITests-Runner.ipa'
     frameworkOption: 'xcuitest'
     xcUITestBuildDirectory: 'build/derivedData/Build/Products/Debug-iphoneos'
     credentialsOption: 'serviceEndpoint'

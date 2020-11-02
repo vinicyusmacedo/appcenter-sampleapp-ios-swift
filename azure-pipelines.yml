@@ -31,7 +31,7 @@ steps:
     script: |
       # Write your commands here
       
-      ls build/derivedData
+      ls build/derivedData/Build/Products
 
 - task: AppCenterTest@1
   inputs:

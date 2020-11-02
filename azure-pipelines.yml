@@ -25,6 +25,14 @@ steps:
     publishJUnitResults: true
     args: '-derivedDataPath build/derivedData'
 
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      ls build/derivedData
+
 - task: AppCenterTest@1
   inputs:
     appFile: 'build/derivedData/Build/Products/Debug-iphoneos/sampleapp-ios-swift.app'

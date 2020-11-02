@@ -20,7 +20,7 @@ steps:
     sdk: 'iphoneos'
     xcWorkspacePath: '*.xcworkspace'
     scheme: 'sampleapp-ios-swift'
-    packageApp: true
+    packageApp: false
     destinationDevices: 'platform=iOS Simulator,name=iPhone SE,OS=12.2'
     publishJUnitResults: true
     args: '-derivedDataPath build/derivedData'

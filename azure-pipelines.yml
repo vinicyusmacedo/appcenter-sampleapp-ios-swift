@@ -29,7 +29,7 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: '/usr/local/bin/appcenter test prepare xcuitest --artifacts-dir /Users/runner/work/1/a/AppCenterTest --build-dir build/derivedData/Build/Products/Debug-iphoneos --quiet'
+    script: '/usr/local/bin/appcenter test prepare xcuitest --artifacts-dir ./AppCenterTest --build-dir build/derivedData/Build/Products/Debug-iphoneos --quiet'
 
 - task: AppCenterTest@1
   inputs:

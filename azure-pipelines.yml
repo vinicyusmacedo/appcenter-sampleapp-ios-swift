@@ -30,6 +30,13 @@ steps:
   inputs:
     filePath: 'build-debug-ipa.sh'
 
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      ls 
+      ls /tmp
+
 - task: AppCenterTest@1
   inputs:
     appFile: 'sampleapp-ios-swift.ipa'

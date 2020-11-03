@@ -26,6 +26,10 @@ steps:
     publishJUnitResults: true
     args: '-derivedDataPath build/derivedData'
 
+- task: Bash@3
+  inputs:
+    filePath: 'build-debug-ipa.sh'
+
 - task: AppCenterTest@1
   inputs:
     appFile: 'AppCenterTest/sampleapp-ios-swiftUITests-Runner.ipa'

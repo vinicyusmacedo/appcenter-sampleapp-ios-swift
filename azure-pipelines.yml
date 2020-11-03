@@ -30,16 +30,9 @@ steps:
   inputs:
     filePath: 'build-debug-ipa.sh'
 
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      ls 
-      ls /tmp
-
 - task: AppCenterTest@1
   inputs:
-    appFile: 'sampleapp-ios-swift.ipa'
+    appFile: '/tmp/sampleapp-ios-swift.ipa'
     frameworkOption: 'xcuitest'
     xcUITestBuildDirectory: 'build/derivedData/Build/Products/Debug-iphoneos'
     credentialsOption: 'serviceEndpoint'

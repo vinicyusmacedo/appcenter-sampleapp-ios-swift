@@ -28,11 +28,13 @@ steps:
 
 - task: Bash@3
   inputs:
-    filePath: 'build-debug-ipa.sh'
+    targetType: 'inline'
+    script: '/usr/local/bin/appcenter test prepare xcuitest --artifacts-dir /Users/runner/work/1/a/AppCenterTest --build-dir build/derivedData/Build/Products/Debug-iphoneos --quiet'
 
 - task: AppCenterTest@1
   inputs:
-    appFile: '/tmp/sampleapp-ios-swift.ipa'
+    prepareTests: false
+    appFile: 'AppCenterTest/sampleapp-ios-swiftUITests-Runner.ipa'
     frameworkOption: 'xcuitest'
     xcUITestBuildDirectory: 'build/derivedData/Build/Products/Debug-iphoneos'
     credentialsOption: 'serviceEndpoint'
